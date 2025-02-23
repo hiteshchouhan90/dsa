@@ -7,6 +7,7 @@ from dsa.sorting_methods.insertion_sort import insertion_sort
 from dsa.sorting_methods.merge_sort import merge_sort
 from dsa.sorting_methods.rec_bubble_sort import rec_bubble_sort
 from dsa.sorting_methods.rec_insertion_sort import rec_insertion_sort
+from dsa.sorting_methods.quick_sort import quick_sort_inplace
 
 class TestSortingMethods(unittest.TestCase):
 
@@ -45,6 +46,12 @@ class TestSortingMethods(unittest.TestCase):
         self.assertEqual(rec_insertion_sort([3, 1, 2]), [1, 2, 3])
         self.assertEqual(rec_insertion_sort([1]), [1])
         self.assertEqual(rec_insertion_sort([]), [])
+
+    def quick_sort_inplace(self):
+        self.assertEqual(quick_sort_inplace([7, 6, 5, 4, 3, 2, 1]), [1, 2, 3, 4, 5, 6, 7])
+        self.assertEqual(quick_sort_inplace([3, 1, 2]), [1, 2, 3])
+        self.assertEqual(quick_sort_inplace([1]), [1])
+        self.assertEqual(quick_sort_inplace([]), [])  
 
 if __name__ == '__main__':
     unittest.main()
